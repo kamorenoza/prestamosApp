@@ -35,5 +35,6 @@ module.exports = defineConfig({
       msTileImage: null
     },
     workboxPluginMode: 'GenerateSW'
-  }
+  },
+  publicPath: process.env.NODE_ENV === "production" ? "/prestamosApp/" : "/",
 });
