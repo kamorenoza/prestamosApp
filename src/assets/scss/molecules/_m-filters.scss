@@ -1,0 +1,49 @@
+.m-filters {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    width: calc((100% / 3));
+    border-right: 1px solid $border-color;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+
+    &:last-of-type {
+      border-right: none;
+      margin-right: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__icon {
+    margin-right: 10px;
+    color: $light-text;
+    font-size: 1.1rem;
+  }
+
+  &__title {
+    font-size: 1rem;
+    line-height: 1rem;
+    color: $light-text;
+  }
+
+  &__text {
+    font-size: 0.8rem;
+    line-height: 1rem;
+    color: $light-text;
+  }
+
+  &--selected {
+    .m-filters__icon, .m-filters__text, .m-filters__title {
+      color: $color-tertiary;
+    }
+  }
+
+  &--two {
+    .m-filters__item {
+      width: 50%;
+    }
+  }
+}

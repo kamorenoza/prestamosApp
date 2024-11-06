@@ -1,0 +1,78 @@
+.o-detail-client {
+  padding-top: 50px;
+
+  &__header {
+    text-align: center;
+  }
+
+  &__name {
+    font-size: 1.3rem;
+    line-height: 1.2rem;
+    font-family: $fontBook;
+  }
+
+  &__text {
+    color: $light-text;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    cursor: pointer;
+    background-size: cover;
+
+    i, svg {
+      color: $white;
+      font-size: 1.2rem;
+    }
+
+    &.edit { background-image: url("@/assets/images/ic_editar_usuario_round.png") }
+    &.see { background-image: url("@/assets/images/ic_prestamo_usuario_round.png") }
+    &.new { background-image: url("@/assets/images/ic_nuevo_prestamo_round.png") }
+    &.delete { background-image: url("@/assets/images/ic_eliminar_usuario_round.png") }
+  }
+
+  &__action {
+    text-align: center;
+    max-width: 75px;
+
+    p {
+      font-size: 0.9rem;
+      line-height: 0.9rem;
+      padding-top: 5px;
+    }
+  }
+
+  &__body {
+    padding-top: 30px;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-family: $fontBook;
+    margin-bottom: 8px;
+  }
+
+  &__label {
+    font-size: 0.9rem;
+    color: $light-text;
+    padding-left: 10px;
+  }
+
+  &__data {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    padding-left: 10px;
+  }
+}

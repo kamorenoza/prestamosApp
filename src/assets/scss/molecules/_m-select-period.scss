@@ -1,0 +1,52 @@
+.m-select-period {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  width: 100%;
+  margin-bottom: 15px;
+  position: absolute;
+  top: 54px;
+  color: white;
+
+  svg {
+    cursor: pointer;
+    font-size: 1.3rem;
+  }
+
+  &__calendar {
+    position: relative;
+    min-width: 280px;
+    text-align: center;
+  }
+
+  .b-form-datepicker {
+    position: absolute;
+    width: 100%;
+    height: 21px;
+    left: 0;
+
+    .btn#datepicker-2 {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      box-shadow: none;
+
+      &:active, &:focus, &:hover, &:visited, &:focus-visible {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        box-shadow: none;
+      }
+
+      svg {
+        display: none;
+      }
+    }
+  }
+
+  &--graph {
+    position: relative;
+    top: 0;
+  }
+}

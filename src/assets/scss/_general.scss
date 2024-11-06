@@ -1,0 +1,16 @@
+$font: 'Cerebri', serif;
+$fontBook: 'CerebriBook', serif;
+$fontBold: 'CerebriBold', serif;
+
+body {
+  font-family: $font;
+  background-color: $color-general;
+  min-width: 375px;
+  overflow-x: auto;
+  max-width: 800px;
+  margin: auto;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0;
+}

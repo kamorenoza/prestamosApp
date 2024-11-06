@@ -1,0 +1,25 @@
+.o-modal {
+  &__header {
+    border-bottom: 1px solid $border-color;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  &__body {
+    padding: 10px 10px 0;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 10px;
+    border-top: 1px solid $border-color;
+  }
+
+  &__action {
+    cursor: pointer;
+    margin-left: 25px;
+    font-size: 0.9rem;
+  }
+}

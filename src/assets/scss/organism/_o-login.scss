@@ -1,0 +1,36 @@
+.o-login {
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 7%), 0 4px 6px -2px rgb(0 0 0 / 5%);
+  border-radius: 15px;
+  padding: 20px;
+  overflow: hidden;
+  background-color: $white;
+  position: absolute;
+
+  &__image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    //background-image: url('@/assets/images/gastos.png');
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__subtitle {
+    font-size: 0.8rem;
+  }
+
+  &__btn {
+    width: 90%;
+    border-radius: 3px;
+    color: $light-text;
+    background-image: url('@/assets/images/google-logo.png');
+    background-repeat: no-repeat;
+    background-position: 30px center;
+    border: 1px solid $shadow;
+    padding-left: 30px
+  }
+}

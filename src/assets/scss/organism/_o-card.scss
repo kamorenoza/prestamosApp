@@ -1,0 +1,47 @@
+.o-card {
+  box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+              0 1px 3px 1px rgb(0 0 0 / 14%),
+              0 1px 3px 0px rgb(0 0 0 / 12%);
+  background-color: $white;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  padding: 12px;
+  cursor: pointer;
+
+  &-header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+  }
+
+  &-body {
+    padding-top: 10px;
+  }
+
+  &__text-gray {
+    color: $light-text;
+    font-size: 14px;
+  }
+
+  &__title {
+    font-size: 1rem;
+    text-transform: capitalize;
+  }
+
+  &__total {
+    font-size: 1.1rem;
+    font-family: $fontBook;
+    border-bottom: 1px solid $border-color;
+    padding: 0 0 3px;
+  }
+
+  &__icon {
+    color: $color-success;
+    font-size: 1.2rem;
+  }
+
+  &__name {
+    width: 70%;
+  }
+}

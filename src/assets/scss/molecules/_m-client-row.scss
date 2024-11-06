@@ -1,0 +1,36 @@
+.m-client-row {
+  margin-bottom: 15px;
+
+  &__name {
+    font-family: $fontBook;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+
+  &__icon {
+    background-color: $color-success;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    flex-basis: 35px;
+
+    i, svg {
+      font-size: 1.1rem;
+      color: $white;
+    }
+  }
+
+  &__text {
+    line-height: 1.3rem;
+    color: $light-text;
+    cursor: pointer;
+  }
+
+  &__body {
+    flex-basis: calc(100% - 45px);
+    margin-left: 10px;
+  }
+}

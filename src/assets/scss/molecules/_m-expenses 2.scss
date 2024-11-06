@@ -1,0 +1,116 @@
+.m-total-expenses {
+  background-color: $blue;
+  position: absolute;
+  top: 81px;
+  left: 0;
+  width: 100%;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  z-index: 1;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 3px 2px -1px rgb(0 0 0 / 20%);
+  padding-top: 15px;
+
+  &__subtitle {
+    font-size: 0.9rem;
+    line-height: 1rem;
+  }
+
+  &__amount {
+    font-size: 1.3rem;
+  }
+}
+
+.m-expense {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 15px;
+
+  &__icon {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: $color-success;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+
+    svg, i {
+      color: $white;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__body {
+    width: calc(100% - 115px);
+
+    p {
+      line-height: 1.4rem;
+      text-transform: capitalize;
+    }
+
+    p:last-of-type {
+      color: $light-text;
+      font-size: 1.1rem;
+    }
+  }
+
+  &__actions {
+    width: 80px;
+    text-align: right;
+    padding-right: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__action {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg, i {
+      color: $white;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__delete {
+    background-color: $color-danger;
+  }
+
+  &__edit {
+    background-color: $turqoise;
+  }
+}
+
+.m-expense-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+
+  &__total {
+    font-size: 1.3rem;
+    font-family: $fontBook;
+  }
+
+  &__sub {
+    font-size: 0.9rem;
+    line-height: 1rem;
+  }
+}

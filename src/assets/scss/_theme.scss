@@ -1,0 +1,68 @@
+.valid-alert {
+  height: 25px;
+  position: absolute;
+  bottom: -23px;
+  font-size: 0.9rem;
+}
+
+.loading {
+  &:before {
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    background-color: $white;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 3;
+    background-image: url('@/assets/images/loading.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.swal2-container .swal2-popup {
+  border-radius: 20px;
+
+  .swal2-title {
+    color: $black;
+    padding-top: 20px;
+    font-size: 1rem;
+  }
+
+  .swal2-html-container {
+    font-size: 0.9rem;
+    color: $black;
+  }
+
+  .swal2-styled {
+    border-radius: 20px;
+    padding: 5px 15px 7px;
+    line-height: 1.2rem;
+    
+    &.swal2-confirm {
+      background-color: $color-success;
+    }
+  }
+}
+
+.point {
+  $size: 7px;
+  background-color: $black;
+  width: $size;
+  height: $size;
+  display: inline-block;
+  border-radius: 50%;
+  margin-bottom: 2px;
+
+  &--success { background-color: $color-success }
+  &--danger { background-color: $color-danger }
+}
+
+// Utils
+.border-bottom {
+  border-bottom: 1px solid $border-color;
+}
+
+.c-pointer {
+  cursor: pointer;
+}

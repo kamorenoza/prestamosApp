@@ -1,0 +1,39 @@
+.m-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 71px;
+  z-index: -1;
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+
+  &__text {
+    color: $white;
+    font-size: 1.2rem;
+    font-family: $fontBook;
+  }
+
+  &__button {
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg, i {
+      font-size: 1.4rem
+    }
+  }
+
+  &--back {
+    width: 100%;
+    z-index: 2;
+    background-color: $color-general;
+  }
+}

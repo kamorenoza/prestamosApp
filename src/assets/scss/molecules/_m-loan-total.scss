@@ -1,0 +1,43 @@
+.m-loan-total {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+  0 1px 3px 1px rgb(0 0 0 / 14%),
+  0 1px 3px 0px rgb(0 0 0 / 12%);
+  background-color: $white;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 9px 20px;
+  margin: 0 15px 7px;
+
+  &__icon {
+    margin-right: 15px;
+    font-size: 1.5rem;
+    color: $light-text;
+  }
+
+  &__subtitle {
+    font-size: 0.8rem;
+    color: $light-text;
+    line-height: 1rem;
+    margin-bottom: 3px;
+  }
+
+  &__text {
+    font-family: $fontBook;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    color: $color-danger;
+  }
+
+  &--earnings {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+
+    .m-loan-total__text {
+      font-size: 1.3rem;
+      color: $color-secondary;
+    }
+  }
+}

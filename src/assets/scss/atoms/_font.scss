@@ -1,0 +1,19 @@
+.text-danger {
+  color: $color-danger;
+}
+
+.text-white-title {
+  font-size: 1.2rem;
+  color: $white;
+  position: absolute;
+}
+
+.text-book {
+  font-family: $fontBook;
+}
+
+.text-li {
+  line-height: 1rem;
+  font-size: 1rem;
+  color: $light-text;
+}

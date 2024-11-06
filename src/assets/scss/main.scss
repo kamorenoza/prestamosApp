@@ -1,0 +1,84 @@
+/* Variables */
+$shadow: #ddd;
+$light-text: #7b7b7b;
+$white: #fff;
+$black: #000;
+$blue: #4564bf;
+$border-color: #dee2e6;
+$turqoise: #1da7a9;
+$yellow: #ebcf49;
+
+$color-success: #58d4a0;
+$color-danger: #f2533b;
+$color-warning: #f97808;
+
+$color-secondary: #1da9aa;
+$color-general: #4564bf;
+$color-tertiary: #cf4a7b;
+
+$background-gray: #dcdcdc;
+$background-light-gray: #efefef;
+
+$font: 'Cerebri', serif;
+$fontBook: 'CerebriBook', serif;
+$fontBold: 'CerebriBold', serif;
+
+$generalShadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+
+/* Fonts */
+@font-face {
+  font-family: 'Cerebri';
+  src: url('@/assets/fonts/MavenProRegular.ttf');
+  src: url('@/assets/fonts/MavenProRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CerebriBook';
+  src: url('@/assets/fonts/MavenProMedium.ttf');
+  src: url('@/assets/fonts/MavenProMedium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CerebriBold';
+  src: url('@/assets/fonts/MavenProBold.ttf');
+  src: url('@/assets/fonts/MavenProBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* General */
+@import '@/assets/scss/_general.scss';
+@import '@/assets/scss/_theme.scss';
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css");
+
+/* Layouts */
+@import '@/assets/scss/_l-layout.scss';
+
+/* Organims */
+@import '@/assets/scss/organism/_o-menu.scss';
+@import '@/assets/scss/organism/_o-detail-client.scss';
+@import '@/assets/scss/organism/_o-loan.scss';
+@import '@/assets/scss/organism/_o-card.scss';
+@import '@/assets/scss/organism/_o-detail-loan.scss';
+@import '@/assets/scss/organism/_o-modal.scss';
+@import '@/assets/scss/organism/_o-login.scss';
+
+/* Molecules */
+@import '@/assets/scss/molecules/_m-title.scss';
+@import '@/assets/scss/molecules/_m-client-row.scss';
+@import '@/assets/scss/molecules/_m-photo.scss';
+@import '@/assets/scss/molecules/_m-fees.scss';
+@import '@/assets/scss/molecules/_m-filters.scss';
+@import '@/assets/scss/molecules/_m-loan-total.scss';
+@import '@/assets/scss/molecules/_m-select-period.scss';
+@import '@/assets/scss/molecules/_m-expenses.scss';
+
+/* Atoms */
+@import '@/assets/scss/atoms/_buttons.scss';
+@import '@/assets/scss/atoms/_icons.scss';
+@import '@/assets/scss/atoms/_inputs.scss';
+@import '@/assets/scss/atoms/_font.scss';

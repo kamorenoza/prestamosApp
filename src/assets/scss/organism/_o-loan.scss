@@ -1,0 +1,46 @@
+.o-loan {
+  background-color: $white;
+  margin-top: 130px;
+  height: calc(100vh - 192px);
+  position: relative;
+
+  &__card {
+    $width: calc(100% - 80px);
+
+    position: absolute;
+    width: $width;
+    height: auto;
+    top: 23px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    border-radius: 8px;
+    background-color: $white;
+    padding: 15px 5px;
+  }
+
+  &__name {
+    position: absolute;
+    top: -130px;
+    left: 20px;
+    font-size: 1.3rem;
+    color: $white;
+  }
+
+  &__body {
+    padding: 150px 20px 80px;
+    height: 100%;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    color: $color-general;
+    font-family: $fontBook;
+  }
+
+  &__dates {
+    width: 100%;
+    height: calc(100vh - 600px);
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,110 @@
+.o-detail-loan {
+  &__header {
+    padding: 0 30px 20px;
+
+    p {
+      color: $white;
+      font-size: 1.2rem;
+    }
+
+    .amount {
+      font-size: 1.3rem;
+      font-family: $fontBook;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    color: $white;
+    font-size: 1.2rem;
+    justify-content: space-around;
+
+    svg, i {
+      cursor:pointer;
+    }
+
+    p {
+      line-height: 10px;
+      font-size: 13px;
+    }
+  }
+
+  &__body {
+    height: calc(100vh - 182px);
+    background: $white;
+    margin-top: 40px;
+    position: relative;
+    padding: 50px 15px 20px;
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    width: 85%;
+    background-color: $white;
+    box-shadow: $generalShadow;
+    border-radius: 8px;
+    padding: 15px 10px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 45px;
+      left: 48%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: $border-color;
+    }
+
+    &-item {
+      width: 50%;
+      padding-left: 10px;
+    }
+
+    .amount {
+      font-family: $fontBook;
+      font-size: 1.1rem;
+    }
+  }
+
+  &__gray-text {
+    font-size: 0.9rem;
+    color: $light-text;
+    line-height: 0.9rem;
+  }
+
+  &__calendar {
+    $size: 50px;
+    background-image: url('@/assets/images/ic_calendario.png');
+    width: $size;
+    height: $size;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__fees {
+    $size: 50px;
+    background-image: url('@/assets/images/ic_plazo_color.png');
+    width: $size;
+    height: $size;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__fees-container {
+    height: calc(100vh - 408px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 170px;
+  }
+
+  &__counter {
+    padding-right: 25px;
+  }
+}
