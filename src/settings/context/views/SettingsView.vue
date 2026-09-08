@@ -31,6 +31,12 @@
             Hacer copia de seguridad
           </p>
         </div>
+        <div @click="downloadLocal()" class="mt-4 border-top pt-3">
+          <p>
+            <b-icon icon="download" class="mr-1" />
+            Descargar copia local
+          </p>
+        </div>
         <div @click="logout()" class="mt-4 border-top pt-3 border-bottom pb-4">
           <p>
             <b-icon icon="box-arrow-in-left" class="mr-1" />
@@ -115,6 +121,10 @@ export default {
 
     async doBackup () {
       await this.backupUc.createBackup(true)
+    },
+
+    downloadLocal () {
+      this.backupUc.downloadLocalBackup()
     },
 
     async logout () {

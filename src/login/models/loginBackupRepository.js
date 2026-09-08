@@ -1,6 +1,6 @@
 import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth'
 import { db, auth } from '@/firebase/firebase'
-import { doc, getDoc, setDoc } from 'firebase/firestore'
+import { doc, getDoc, setDoc, collection, getDocs } from 'firebase/firestore'
 
 export default class LoginBackupRepository {
   login () {
@@ -30,5 +30,27 @@ export default class LoginBackupRepository {
     const ref = doc(db, 'backup', user)
 
     return setDoc(ref, data)
+  }
+
+  // Doc principal: settings + clients + loans (liviano y relacional).
+  getMainFromDB (email) {
+    return getDoc(doc(db, 'backup', email))
+  }
+
+  setMainDB (email, data) {
+    return setDoc(doc(db, 'backup', email), data)
+  }
+
+  // Historial por año: backup/{email}/history/{year} con { fees, expenses }.
+  getYearFromDB (email, year) {
+    return getDoc(doc(db, 'backup', email, 'history', String(year)))
+  }
+
+  setYearDB (email, year, data) {
+    return setDoc(doc(db, 'backup', email, 'history', String(year)), data)
+  }
+
+  getHistoryYears (email) {
+    return getDocs(collection(db, 'backup', email, 'history'))
   }
 }

@@ -8,7 +8,7 @@ module.exports = defineConfig({
       short_name: 'Mis Préstamos',
       start_url: './',
       display: 'standalone',
-      theme_color: '#4564bf',
+      theme_color: '#4564BF',
       icons: [
         {
           src: './img/icons/android-chrome-192x192.png',
@@ -23,7 +23,7 @@ module.exports = defineConfig({
       ]
     },
 
-    themeColor: '#4564bf',
+    themeColor: '#4564BF',
     msTileColor: '#000000',
     appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: 'white',
@@ -34,7 +34,12 @@ module.exports = defineConfig({
       appleTouchIcon: null,
       msTileImage: null
     },
-    workboxPluginMode: 'GenerateSW'
+    workboxPluginMode: 'GenerateSW',
+    workboxOptions: {
+      skipWaiting: true,
+      clientsClaim: true,
+      cleanupOutdatedCaches: true
+    }
   },
   publicPath: process.env.NODE_ENV === "production" ? "/prestamosApp/" : "/",
 });

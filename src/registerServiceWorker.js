@@ -3,6 +3,16 @@
 import { register } from "register-service-worker";
 
 if (process.env.NODE_ENV === "production") {
+  // Recarga una sola vez cuando el nuevo service worker toma el control.
+  let refreshing = false;
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (refreshing) return;
+      refreshing = true;
+      window.location.reload();
+    });
+  }
+
   register(`${process.env.BASE_URL}service-worker.js`, {
     ready() {
       console.log(
@@ -20,7 +30,7 @@ if (process.env.NODE_ENV === "production") {
       console.log("New content is downloading.");
     },
     updated() {
-      console.log("New content is available; please refresh.");
+      console.log("New content is available; activating new version.");
     },
     offline() {
       console.log(

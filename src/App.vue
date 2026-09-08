@@ -30,22 +30,20 @@ export default {
   methods: {
     async loginUserSuccess (user) {
       utils.startLoading()
-      const response = await uc.getAllData(user.email)
+      // Carga rápida: doc principal + año actual. El resto de años se trae por debajo.
+      const restored = await uc.restoreCurrent(user.email)
       this.setEmail(user.email)
 
-      if (response) this.whenUserLogin(response)
-      else {
+      if (restored) {
+        this.setSettings(JSON.parse(localStorage.getItem('settings')))
+        utils.stopLoading()
+        if (this.$route.name !== '/') this.$router.push('/')
+
+        if (!restored.legacy) uc.restoreRestInBackground(user.email)
+      } else {
         utils.stopLoading()
         this.$router.push('/settings')
       }
-    },
-
-    async whenUserLogin (data) {
-      uc.setBackup(data)
-      this.setSettings(JSON.parse(localStorage.getItem('settings')))
-      utils.stopLoading()
-
-      if (this.$route.name !== '/') this.$router.push('/')
     },
 
     logoutUser () {
