@@ -1,6 +1,6 @@
 import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth'
 import { db, auth } from '@/firebase/firebase'
-import { doc, getDoc, setDoc, collection, getDocs } from 'firebase/firestore'
+import { doc, getDoc, setDoc, deleteDoc, collection, getDocs } from 'firebase/firestore'
 
 export default class LoginBackupRepository {
   login () {
@@ -52,5 +52,58 @@ export default class LoginBackupRepository {
 
   getHistoryYears (email) {
     return getDocs(collection(db, 'backup', email, 'history'))
+  }
+
+  // ---- Modelo semanal (Opción 1): baseline inmutable + semanas ----
+
+  // Índice liviano de semanas: { ids: [...], latest, baselineCreated }.
+  getWeeksIndex (email) {
+    return getDoc(doc(db, 'backup', email, 'meta', 'weeks'))
+  }
+
+  setWeeksIndex (email, data) {
+    return setDoc(doc(db, 'backup', email, 'meta', 'weeks'), data)
+  }
+
+  // Baseline: copia permanente creada UNA sola vez. meta + años particionados.
+  getFrozenBaselineMeta (email) {
+    return getDoc(doc(db, 'backup', email, 'frozen', 'baseline'))
+  }
+
+  setFrozenBaselineMeta (email, data) {
+    return setDoc(doc(db, 'backup', email, 'frozen', 'baseline'), data)
+  }
+
+  setFrozenBaselineYear (email, year, data) {
+    return setDoc(doc(db, 'backup', email, 'frozen', 'baseline', 'years', String(year)), data)
+  }
+
+  // Semana: meta (settings + clients + loans) + años (fees + expenses).
+  getWeekMeta (email, weekId) {
+    return getDoc(doc(db, 'backup', email, 'weeks', weekId))
+  }
+
+  setWeekMeta (email, weekId, data) {
+    return setDoc(doc(db, 'backup', email, 'weeks', weekId), data)
+  }
+
+  getWeekYear (email, weekId, year) {
+    return getDoc(doc(db, 'backup', email, 'weeks', weekId, 'years', String(year)))
+  }
+
+  setWeekYear (email, weekId, year, data) {
+    return setDoc(doc(db, 'backup', email, 'weeks', weekId, 'years', String(year)), data)
+  }
+
+  getWeekYears (email, weekId) {
+    return getDocs(collection(db, 'backup', email, 'weeks', weekId, 'years'))
+  }
+
+  deleteWeekYear (email, weekId, year) {
+    return deleteDoc(doc(db, 'backup', email, 'weeks', weekId, 'years', String(year)))
+  }
+
+  deleteWeekMeta (email, weekId) {
+    return deleteDoc(doc(db, 'backup', email, 'weeks', weekId))
   }
 }
